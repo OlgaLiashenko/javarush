@@ -16,22 +16,26 @@ public class EveryWordBigLetter {
             //or
             return null;
         }
-        if (input.equals("")) {
-            return "";
+
+        char[] lettersArray = input.toCharArray();
+        for (int i = 0; i < lettersArray.length; i++) {
+            if (i == 0 || lettersArray[i - 1] == ' ') {
+                lettersArray[i] = Character.toUpperCase(lettersArray[i]);
+            }
         }
 
-        String[] arrayOfWords = input.split(" ");
-        String result = "";
-        for (int i = 0; i < arrayOfWords.length; i++) {
-            String word = arrayOfWords[i];
-            if (!word.equals("")) {
-                result = result + Character.toUpperCase(word.charAt(0)) + word.substring(1);
-            }
-            if (i != arrayOfWords.length - 1) {
-                result = result + " ";
-            }
+        StringBuilder result = new StringBuilder();
+        for (char character : lettersArray) {
+            result.append(character);
         }
-        return result;
+        return result.toString();
+
+      /*  String result = "";
+        for (char character : lettersArray) {
+            result = result + character;
+        }
+        return result; */
+
     }
 
     @Test
