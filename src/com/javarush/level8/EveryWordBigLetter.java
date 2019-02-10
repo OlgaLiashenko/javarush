@@ -6,6 +6,7 @@ package com.javarush.level8;
 //возвращает строку с результатом.
 
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class EveryWordBigLetter {
@@ -18,11 +19,13 @@ public class EveryWordBigLetter {
     @Test
     public void checkReplaceFirstLetterToUppercase() {
         //given
+        String input = "My sister loves coffee";
 
         //when
+        String result = replaceFirstLetterToUppercase(input);
 
         //then
-
+        Assert.assertEquals("No all of words are from big letter.", "My Sister Loves Coffee", result);
     }
 
 
