@@ -7,7 +7,7 @@ package com.javarush.level8;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Comparator;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListMinNumber {
@@ -16,20 +16,29 @@ public class ListMinNumber {
         System.out.println(getMinimum(integerList));
     }
 
-    public static int getMinimum(List<Integer> array) {
-       array.sort(Comparator.naturalOrder());
-        return array.get(0);
+    public static int getMinimum(List<Integer> list) {
+        // return Collections.min(list, Comparator.naturalOrder());
+        if (list.size() == 0) {
+            return 0;
+        }
+        int min = list.get(0);
+        for (Integer number : list) {
+            if (number < min) {
+                min = number;
+            }
+        }
+        return min;
     }
 
     public static List<Integer> getIntegerList() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int numberOfNumberStrings =  Integer.parseInt(reader.readLine());
+        int numberOfNumberStrings = Integer.parseInt(reader.readLine());
 
-        int array[] = new int[numberOfNumberStrings];
-        for(int i=0; i<numberOfNumberStrings; i++){
-            array[i] = Integer.parseInt(reader.readLine());
+        List<Integer> numbers = new ArrayList<>();
+        for (int i = 0; i < numberOfNumberStrings; i++) {
+            numbers.add(Integer.parseInt(reader.readLine()));
         }
-        return null;
+        return numbers;
     }
 }
 //    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
