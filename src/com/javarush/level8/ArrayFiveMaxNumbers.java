@@ -12,9 +12,12 @@ public class ArrayFiveMaxNumbers {
 //        int[] numbersArray = new int[]{2, 5, -1, 16, 90, 56, 14, 33, 54, 11};
 
     public static int[] fiveMaxNumbers(int[] numbersArray) {
+        int[] result = new int[5];
+        if (numbersArray == null) {
+            return result;
+        }
         sort(numbersArray);
 
-        int[] result = new int[5];
 
 //        with array.sort()
 //        for (int i = numbersArray.length - 1, j = 0; (i >= 0 && j<5); i--,j++) {
@@ -70,5 +73,12 @@ public class ArrayFiveMaxNumbers {
 
         //then
         Assert.assertArrayEquals("Only three numbers in array.", new int[]{22, 11, 4, 0, 0}, result);
+    }
+
+    @Test
+    public void checkNull() {
+        int[] input = null;
+        int[] result = fiveMaxNumbers(input);
+        Assert.assertArrayEquals("Check null", new int[]{0, 0, 0, 0, 0}, result);
     }
 }
