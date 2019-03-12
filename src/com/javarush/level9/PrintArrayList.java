@@ -32,7 +32,6 @@ public class PrintArrayList {
                 System.out.print(x + " ");
             }
             System.out.println("");
-
         }
     }
 }
