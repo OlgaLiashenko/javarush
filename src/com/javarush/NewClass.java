@@ -3,6 +3,7 @@ package com.javarush;
 public class NewClass {
 
     public static void main(String[] args) {
+
         // write your code here
         int x = 0;
         while (x<3) {

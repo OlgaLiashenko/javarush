@@ -18,4 +18,20 @@ public class MyClassWithStaticVariables {
     public int multiplyInstanceVariableByTwo() {
         return this.instanceVariable * 2;
     }
+
+    public static void main(String[] args) {
+        MyClassWithStaticVariables first = new MyClassWithStaticVariables();
+        first.instanceVariable = 1;
+        MyClassWithStaticVariables.staticVariable = 432;
+        System.out.println(first.toString());
+
+        MyClassWithStaticVariables second = new MyClassWithStaticVariables();
+        second.instanceVariable = 2;
+        System.out.println(second.toString());
+
+    }
+
+    public String toString() {
+        return "this instance variable =" + instanceVariable + " static variable = " + staticVariable;
+    }
 }

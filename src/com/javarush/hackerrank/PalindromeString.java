@@ -10,15 +10,13 @@ public class PalindromeString {
     public String isPalindrome(String input) {
 
 //        char[] letters = input.toCharArray();
-//        int index = letters.length;
+//        int index = letters.length-1;
 //        String answer = "Yes";
 
         /*
         for (int i = 0; i < letters.length / 2; i++) {
-            if (letters[i] == letters[index - 1]) {
+            if (letters[i] == letters[index]) {
                 index--;
-            } else {
-                answer = "no";
             }
         }
         */
